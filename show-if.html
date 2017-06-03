@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>show-if</title>
+</head>
+<body>
+<div id="app" v-show="flag">
+    是否为true为true显示，否则消失
+    <div v-if="obj">
+        {{obj.name}}
+    </div>
+</div>
+<script src="vue2.0.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            flag:false,
+            obj:undefined
+//            obj:{name:1}
+        }
+    });
+</script>
+</body>
+</html>

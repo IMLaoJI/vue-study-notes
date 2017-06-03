@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <parent>
+
+  </parent>
+</div>
+<template id="tmpl">
+  <div>
+    <div>parent{{name}}</div>
+    <child :n="name"></child>
+  </div>
+</template>
+<script src="vue2.0.js"></script>
+<script>
+  var vm = new Vue({
+      el:'#app',
+      components:{
+        parent:{
+            template:'#tmpl',
+          data(){
+                return{
+                    name:'vue'
+                }
+          },
+          components:{
+                child:{
+                    template:'<div>child{{n}}</div>',
+                    props:{n:String}
+                }
+          }
+        }
+      }
+  });
+</script>
+</body>
+</html>

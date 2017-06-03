@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>键盘事件</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" @keydown.enter="fn">
+</div>
+<script src="vue2.0.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        methods:{
+            fn(){
+
+                    alert('你按下了回车')
+            }
+        }
+    });
+</script>
+</body>
+</html>

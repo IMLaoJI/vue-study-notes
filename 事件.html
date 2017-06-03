@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+</head>
+<body>
+<div id="app">
+    <div @click="fn">
+        parent
+        <div @click.stop="fn">child</div>
+        <a @click.prevent="fn1" href="www.baidu.com">go</a>
+    </div>
+</div>
+<script src="vue2.0.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        methods:{
+            fn(){
+                alert('hello');
+            },
+            fn1(){
+                alert(1)
+            }
+        }
+    });
+</script>
+</body>
+</html>

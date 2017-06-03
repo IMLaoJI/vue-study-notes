@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <button @click="fn($event)">弹</button>
+  <ul>
+    <li v-for="iphone in iphoneArr">{{iphone}}</li>
+  </ul>
+</div>
+<script src="vue2.0.js"></script>
+<script>
+  //加括号一般用于传递参数，如果传递参数，要手动增加e
+  var vm = new Vue({
+      el:'#app',
+    data:{
+          iphoneArr:['iphone5','iphone6','iphone7']
+    },
+      methods:{
+          fn(e){
+              //console.log(this.iphoneArr);
+              this.iphoneArr.push('iphone8');
+          }
+      }
+  });
+  console.log(vm.iphoneArr);
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <hello></hello>
+</div>
+<script src="vue2.0.js"></script>
+<script>
+  var vm = new Vue({
+      el:'#app',
+      components:{
+          hello:{
+              template:'<h1>hello {{name}}</h1>',
+            data(){
+                  return{
+                      name:'zfpx'
+                  }
+            }
+          }
+      }
+  });
+</script>
+</body>
+</html>

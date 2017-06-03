@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="animate.css">
+  <style>
+    .fadeIn{
+      background: red;
+      width: 200px;
+      height: 200px;
+    }
+    .fly-enter{
+      width: 100px;
+      height: 100px;
+    }
+    .fly-enter-active{
+      -webkit-transition: 1s linear;
+    }
+    .fly-leave-active{
+      width: 100px;
+      height: 100px;
+      -webkit-transition: 1s linear;
+    }
+    /*fly-enter初始状态设置 fly-enter-active激活进入时*/
+    /*fly-leave初始离开状态设置 fly-leave-active激活离开时*/
+  </style>
+</head>
+<body>
+<div id="app">
+<button @click="flag=!flag">显示/隐藏</button>
+  <transition-group enter-active-class="animated fadeInUp" leave-active-class="animated fadeOutDown">
+    <div v-show="flag" class="fadeIn" :key="1">
+      这是显示或者隐藏
+    </div>
+    <div v-show="flag" class="fadeIn" :key="2">
+      这是显示或者隐藏
+    </div>
+  </transition-group>
+</div>
+<script src="vue2.0.js"></script>
+<script>
+  var vm= new Vue({
+      el:'#app',
+    data:{
+        flag:true,
+    }
+  });
+</script>
+</body>
+</html>

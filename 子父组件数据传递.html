@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <parent>
+
+  </parent>
+</div>
+<template id="tmpl">
+  <div>
+    <div>parent</div>{{age}}
+    <child @s="p"></child>
+  </div>
+</template>
+<script src="vue2.0.js"></script>
+<script>
+  var vm = new Vue({
+      el:'#app',
+      components:{
+        parent:{
+            methods:{
+                p(data){
+                  this.age=data;
+                }
+            },
+            template:'#tmpl',
+          data(){
+                return{
+                    age:0
+                }
+          },
+          components:{
+                child:{
+                    template:'<div @click="sayAge">child</div>',
+                  methods:{
+                        sayAge(){
+                            this.$emit('s',this.age)
+                        }
+                  },
+                  data(){
+                      return{age:18}
+                  }
+                }
+          }
+        }
+      }
+  });
+</script>
+</body>
+</html>

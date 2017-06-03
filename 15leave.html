@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>留言板</title>
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+<body>
+<div id="app">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form role="form">
+                    <div class="form-group">
+                        <label for="title" class="control-label">
+                            标题
+                            <input v-model="title" class="form-control" type="text">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="title" class="control-label">
+                            内容
+                            <textarea v-model="content" class="form-control"></textarea>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" @click="leave" class="btn btn-primary">添加留言</button>
+                    </div>
+                </form>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <p>标题</p>
+                        <p>内容信息</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="vue2.0.js"></script>
+<script src="vue-resource.js"></script>
+<script>
+var vm = new Vue({
+    el:'#app',
+    data:{
+        title:'',
+        content:'',
+        message:[]
+    },
+    methods:{
+        leave(){
+            this.$http.post('/leaves',{title:this.title,content:this.content}).then(function(res){
+                this.message = res.body;
+            })
+        }
+    }
+});
+</script>
+</body>
+</html>

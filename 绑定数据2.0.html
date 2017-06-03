@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绑定数据</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <!--2.0写法-->
+        <li v-for="(val,index) in arr" >{{index}}{{val}}</li>
+    </ul>
+</div>
+<script src="vue2.0.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            arr:['iphone6','iphone7','iphone6']
+        }
+    });
+</script>
+</body>
+</html>

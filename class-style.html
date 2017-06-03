@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class-style</title>
+    <style>
+        .back{
+            background: blue;
+        }
+        .color{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!--根据布尔类型增加样式-->
+    <div :class="{back:flag,color:flag}">zfpx</div>
+    <!--数组的方式-->
+    <div :class="[back1,color1]">123</div>
+    <div :style="{background:'green',color:'blue'}">234</div>
+    <div :style="[a,b]">珠峰培训</div>
+</div>
+<script src="vue2.0.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            a:{fontSize:'18px'},
+            b:{
+                background:'#f90'
+            },
+            back1:'back',
+            color1:'color',
+            flag:true
+        }
+    });
+</script>
+<!--vue-resource-->
+</body>
+</html>

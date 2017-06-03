@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>生命周期</title>
+</head>
+<body>
+<div id="app">
+ {{msg}}
+</div>
+<script src="vue1.0.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            msg:'zfpx'
+        },
+        init(){
+            alert('初始化')
+        },
+        created(){
+            alert('初始化完成')
+        },
+        beforeCompile(){
+            alert('编译前')
+        },
+        compiled(){
+            alert('编译后')
+        },
+        ready(){
+            alert('准备好了')
+        },
+        beforeDestroy(){
+            alert('销毁前')
+        },
+        destroy(){
+            alert('销毁后')
+        }
+    });
+    vm.$destroy();
+</script>
+</body>
+</html>

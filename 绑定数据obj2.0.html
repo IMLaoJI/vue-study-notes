@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>obj</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <!--2.0的用法-->
+        <li v-for="(val,key) in obj">
+            {{val}}{{key}}
+        </li>
+    </ul>
+</div>
+<script src="vue1.0.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            obj:{name:'zfpx',age:8,address:'厦门'}
+        }
+    });
+</script>
+</body>
+</html>
